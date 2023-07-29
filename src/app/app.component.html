@@ -1,3 +1,45 @@
+<!-- For For For For -->
+<h1>*ngFor</h1>
+
+<input type="text" required [(ngModel)]="newEmoji" />
+<button (click)="addEmoji()">Add Emoji</button>
+<ul>
+  <li *ngIf="emojis.length === 0" >No hay Emojis</li>
+  <li *ngFor="let emoji of emojis; index as i">
+    {{ emoji }}, {{ i }}
+    <button (click)="deleteEmoji(i)">Delete</button>
+  </li>
+</ul>
+
+
+<hr/>
+
+<!-- If If If If -->
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="person.name" />
+
+<p *ngIf="person.name == 'Sebastian'">Soy Sebastian</p>
+<p *ngIf="person.name == 'Sebastian' && person.age == 26; else elseBlock">Soy Juan Sebastian</p>
+<ng-template #elseBlock>
+  <p>Bloque de Template!</p>
+</ng-template>
+
+
+<hr/>
+
+
+<!-- NgModel -->
+<h1>Ng Model</h1>
+<!-- #nombreVariabe en input -->
+<p>Nombre: {{ person.name }}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
+<p>Valid: {{ nameInput.valid }}</p>
+
+<p>Edad: {{ person.age }}</p>
+<input type="number" max="30" min="10" required #ageInput="ngModel" [(ngModel)]="person.age" />
+<p>Valid: {{ ageInput.valid }}</p>
+
+
 <hr/>
 <!-- Event (Binding) -->
 <h1>Eventos</h1>
@@ -8,7 +50,6 @@
 
 <div class="box" (scroll)="onScroll($event)">
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente excepturi doloribus id tenetur et fuga explicabo similique, quam odio tempora cum neque voluptatem? Voluptatibus architecto, aut maiores molestias ducimus esse! Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi optio consectetur inventore iusto officia quod sed, molestias ipsam fugiat distinctio autem nostrum odit blanditiis error debitis magni nobis velit quisquam!</p>
-
 </div>
 
 <!-- Leer evento de input -->

@@ -16,6 +16,9 @@ export class AppComponent {
     age: 26,
     avatar: 'https://source.unsplash.com/random',
   }
+  names: string[] = ['Juan', 'Sebastian', 'Barrios'];
+  emojis = ['📚', '👾', '🍑', '🍒'];
+  newEmoji = '';
 
   toggleButton(){
     /* Tomamos el estado y lo negamos */
@@ -36,5 +39,13 @@ export class AppComponent {
     this.person.name = element.value;
   }
 
+  addEmoji(){
+    this.emojis.push(this.newEmoji);
+    this.newEmoji = '';
+  }
+
+  deleteEmoji(index: number){
+    this.emojis.splice(index, 1);
+  }
 
 }
