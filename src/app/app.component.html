@@ -1,3 +1,35 @@
+<!-- [ngSwitch] -->
+<input type="text" required [(ngModel)]="person.name" />
+<div [ngSwitch]="person.name">
+    <p *ngSwitchCase="'Juan'">
+        El color el Azul [Juan]
+    </p>
+    <p *ngSwitchCase="'Sebastian'">
+        El color el Verde [Sebastian]
+    </p>
+    <p *ngSwitchCase="'Barrios'">
+        El color el Rojo [Barrios]
+    </p>
+    <p *ngSwitchDefault>
+        No hay ningún nombre
+    </p>
+</div>
+
+
+<hr/>
+<!-- ngFor para Objectos -->
+<h1>ngFor Objs</h1>
+
+<div>
+  <div *ngFor="let product of products">
+    <img width="230" [src]="product.image" alt="image">
+    <h2>{{ product.price }}</h2>
+    <p>{{ product.name }}</p>
+  </div>
+</div>
+
+
+<hr/>
 <!-- For For For For -->
 <h1>*ngFor</h1>
 
@@ -13,7 +45,6 @@
 
 
 <hr/>
-
 <!-- If If If If -->
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="person.name" />
@@ -26,8 +57,6 @@
 
 
 <hr/>
-
-
 <!-- NgModel -->
 <h1>Ng Model</h1>
 <!-- #nombreVariabe en input -->
