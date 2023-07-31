@@ -20,9 +20,9 @@
 <!-- ngFor para Objectos -->
 <h1>ngFor Objs</h1>
 
-<div>
+<div class="products--grid">
   <div *ngFor="let product of products">
-    <img width="230" [src]="product.image" alt="image">
+    <img [src]="product.image" alt="image">
     <h2>{{ product.price }}</h2>
     <p>{{ product.name }}</p>
   </div>
@@ -103,4 +103,4 @@
 
 <h3> Hola, soy {{ name }} y tengo {{ age }} años</h3>
 
-<img src="{{ img }}" alt="image">
+<img width="100px" src="{{ img }}" alt="image">
