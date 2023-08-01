@@ -7,11 +7,23 @@ import {Product} from './product.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  widthImg = 10;
+  box = {
+    width: 100,
+    height: 100,
+    background: 'white',
+  };
+  widthImg = 50;
   name = 'Juan';
   age = 26;
   img = 'https://source.unsplash.com/random'
   btnDisabled = true;
+
+  /* Register */
+  register = {
+    name:'',
+    email: '',
+    password: '',
+  }
 
   /* Person Objt */
   person = {
@@ -86,6 +98,10 @@ export class AppComponent {
 
   deleteEmoji(index: number){
     this.emojis.splice(index, 1);
+  }
+
+  onRegister(){
+    console.log(this.register)
   }
 
 }

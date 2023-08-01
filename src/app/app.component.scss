@@ -37,6 +37,18 @@
   }
 }
 
+.line-error{
+  height: 0;
+  border-bottom: 1px solid;
+
+  &.invalid {
+    border-color: red;
+  }
+  &.valid {
+    border-color: green;
+  }
+}
+
 
 @media screen and (min-width: 40em){
   .products--grid{

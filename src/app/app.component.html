@@ -1,5 +1,38 @@
+<!-- Forms -->
+<h1>Formulario</h1>
+<form (ngSubmit)="onRegister()" #myForm="ngForm">
+  <div class="input-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" [(ngModel)]="register.name" name="nombre" id="nombre" placeholder="Nombre"  required>
+    <p>Mensajes de error</p>
+  </div>
+
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" [(ngModel)]="register.email" name="email" id="email" placeholder="email" required>
+    <p>Mensajes de error</p>
+  </div>
+
+  <div class="input-group">
+    <label for="password">Password</label>
+    <input type="password" [(ngModel)]="register.password" name="password" id="password" placeholder="password" required>
+    <p>Mensajes de error</p>
+  </div>
+
+  <button [disabled]="myForm.invalid" type="submit">Registar</button>
+</form>
+
+
+<hr/>
 <!-- Class & Style -->
 <input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name" />
+<!--  ngClass -->
+<hr class="line-error"
+  [ngClass]="{
+    'valid': nameInput2.valid,
+    'invalid': nameInput2.invalid,
+  }"
+/>
 <p class="message-error" [class.invalid]="nameInput2.invalid">
   El campo es requerido!
 </p>
@@ -10,10 +43,18 @@
 
 <div class="styles">
   <div>
-    <input type="text"  [(ngModel)]="widthImg"/>
+    <input type="number" required [(ngModel)]="box.width" />
+    <input type="number" required [(ngModel)]="box.height" />
+    <input type="color" required [(ngModel)]="box.background" />
   </div>
   <div>
-    <img [src]="img" [style.width.px]="widthImg" alt="">
+    <div [ngStyle]="{
+      'width.px': box.width,
+      'height.px': box.height,
+      'background-color': box.background,
+      'display': 'block'
+    }">
+    </div>
   </div>
 </div>
 
